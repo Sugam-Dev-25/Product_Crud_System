@@ -17,7 +17,7 @@ DatabaseConnection();
 app.use(express.static('public'));
 
 const productRoutes = require('./app/router/productRoutes');
-app.use('/api', productRoutes);
+app.use(productRoutes);
 
 
 const port = 5000;
