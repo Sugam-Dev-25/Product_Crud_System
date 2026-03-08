@@ -21,10 +21,10 @@
 
 <div class="d-flex justify-content-between mb-4">
 <h3>Products</h3>
-<a href="/api/home" class="btn btn-primary">Add Product</a>
+<a href="/home" class="btn btn-primary">Add Product</a>
 </div>
 
-<form method="GET" action="/api/all" class="row g-3 mb-4">
+<form method="GET" action="/" class="row g-3 mb-4">
 
 <div class="col-md-3">
 <select name="category" class="form-select">
@@ -89,11 +89,11 @@
 
 <td>
 
-<a href="/api/edit/<%= product._id %>" class="btn btn-warning btn-sm">
+<a href="/edit/<%= product._id %>" class="btn btn-warning btn-sm">
 Edit
 </a>
 
-<form action="/api/delete/<%= product._id %>" method="POST" style="display:inline;">
+<form action="/delete/<%= product._id %>" method="POST" style="display:inline;">
 <button class="btn btn-danger btn-sm">Delete</button>
 </form>
 

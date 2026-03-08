@@ -36,7 +36,7 @@ class productController {
 
       await newProduct.save();
 
-      return res.redirect("/api/all");
+      return res.redirect("/");
 
     } catch (error) {
       console.log(error);
@@ -73,7 +73,7 @@ class productController {
 
       await Product.findByIdAndUpdate(req.params.id, req.body);
 
-      return res.redirect("/api/all");
+      return res.redirect("/");
 
     } catch (error) {
       console.log(error);
@@ -87,7 +87,7 @@ class productController {
 
       await Product.findByIdAndDelete(req.params.id);
 
-      return res.redirect("/api/all");
+      return res.redirect("/");
 
     } catch (error) {
       console.log(error);
