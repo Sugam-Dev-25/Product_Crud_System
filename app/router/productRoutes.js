@@ -1,5 +1,6 @@
 const express = require('express');
 const productController = require('../controller/productController');
+const multerUpload = require('../utils/Multer');
 
 const router = express.Router();
 
@@ -12,9 +13,9 @@ const router = express.Router();
 
 router.get('/', productController.filterProduct);
 router.get('/home', productController.homePage);
-router.post('/create', productController.createProduct);
+router.post('/create', multerUpload.single('image'), productController.createProduct);
 router.get('/edit/:id', productController.editView);
-router.post('/update/:id', productController.updateProduct);
+router.post('/update/:id',multerUpload.single('image'), productController.updateProduct);
 router.post('/delete/:id', productController.deleteProduct);
 
 module.exports = router;

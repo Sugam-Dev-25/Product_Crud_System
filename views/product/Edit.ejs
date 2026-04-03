@@ -14,7 +14,7 @@
 
 <h3>Edit Product</h3>
 
-<form method="POST" action="/update/<%= product._id %>">
+<form method="POST" action="/update/<%= product._id %>" enctype="multipart/form-data">
 
 <div class="row g-3">
 
@@ -30,6 +30,7 @@
 <textarea name="description" class="form-control"><%= product.description %></textarea>
 </div>
 
+<!-- CATEGORY -->
 <div class="col-md-4">
 <select name="category" class="form-select">
 <% categories.forEach(cat => { %>
@@ -40,6 +41,7 @@
 </select>
 </div>
 
+<!-- SIZE -->
 <div class="col-md-4">
 <select name="size" class="form-select">
 <% sizes.forEach(size => { %>
@@ -50,6 +52,7 @@
 </select>
 </div>
 
+<!-- COLOR -->
 <div class="col-md-4">
 <select name="color" class="form-select">
 <% colors.forEach(color => { %>
@@ -62,6 +65,18 @@
 
 <div class="col-md-6">
 <input name="stock" value="<%= product.stock %>" class="form-control">
+</div>
+
+<!-- 🔥 CURRENT IMAGE -->
+<div class="col-md-6">
+  <label>Current Image</label><br>
+  <img src="<%= product.image %>" width="120" class="rounded">
+</div>
+
+<!-- 🔥 NEW IMAGE -->
+<div class="col-md-12">
+  <label>Change Image</label>
+  <input type="file" name="image" class="form-control">
 </div>
 
 <div class="col-md-12">
