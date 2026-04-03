@@ -14,7 +14,7 @@
 
 <h3>Create Product</h3>
 
-<form method="POST" action="/create">
+<form method="POST" action="/create" enctype="multipart/form-data">
 
 <div class="row g-3">
 
@@ -56,6 +56,11 @@
 
 <div class="col-md-6">
 <input name="stock" type="number" class="form-control" placeholder="Stock">
+</div>
+
+<!-- ✅ IMAGE FIELD -->
+<div class="col-md-12">
+<input type="file" name="image" class="form-control">
 </div>
 
 <div class="col-md-12">
